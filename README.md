@@ -4,13 +4,15 @@
 
 ---
 
-![DevCheer Banner](./public/cover-image.webp)
+![DevCheer Banner](./public/opengraph.jpg)
 
 ## 🚀 Overview
 
 **DevCheer** is a supercharged, modern portfolio or product showcase template for agencies powered by [Astro](https://astro.build/). It blends high-performance static rendering with interactive animations and buttery-smooth visuals.
 
 Whether you're showcasing a startup, product design, or your dev portfolio — DevCheer keeps it fast.
+
+Issues : webm videos are not loading.
 
 ---
 
@@ -28,4 +30,4 @@ Whether you're showcasing a startup, product design, or your dev portfolio — D
 
 ## 📸 Demo
 
-🌐 [Live Preview](https://your-deploy-link.vercel.app)
+🌐 [Live Preview](https://cheer-template-astro.vercel.app/)
