@@ -1,0 +1,218 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Image } from 'astro:assets';
+import speedTest from "@assets/cheerStatic/green1.jpg";
+import spacer from "@assets/cheerStatic/spacerDarkTop.jpg";
+import Container from "@components/container.astro";
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import moon from "@assets/cheerStatic/cheerMoon2.png";
+import stars from "@assets/cheerStatic/smallStars.png";
+import divide from "@assets/cheerStatic/divider1.png";
+
+const clients = [
+  {
+    title: "3D Products",
+    link: "/test",
+  },
+  {
+    title: "Custom Features",
+    link: "/test",
+  },
+  {
+    title: "Speed + SEO",
+    link: "/test",
+  }
+];
+
+
+---
+
+<div id="wave-section-spacer" class="bg-transparent relative">
+    <Image
+    class="object-cover w-full h-full"
+    src={spacer}
+    alt="spacer between sections"
+    loading="lazy"
+    format="avif"
+  />
+
+  <div class="absolute w-20 h-16 right-72 top-[-11px] md:top-12 md:bottom-80 md:right-56">
+    <Image
+    src={stars}
+    alt="stars"
+    loading="lazy"
+    format="avif"
+    class="w-full h-full"
+    />
+  </div>
+
+  <div id="cheerMoon" class="z-40 absolute w-36 h-36 md:w-80 md:h-80 object-contain
+   bg-repeat right-2 md:right-48 bottom-8 md:bottom-16">
+    <Image
+    src={moon}
+    alt="cheer moon"
+    loading="lazy"
+    format="avif"
+    class="w-full h-full"
+    />
+
+  </div>
+</div>
+
+
+<div class=" py-5 pb-80 md:py-16 min-h-fit relative">
+  <Container>
+    <div class="mt-16 md:mt-0 text-center">
+      <div class="relative w-full h-full p-2">
+        <div id="iconContainer" class="bottom-auto top-[-15rem] md:-top-36 md:left-[6rem] absolute my-10 h-36 w-56">
+          <LottieAnimation src="cheerlottie/cool-smile.json"  autoplay="visible" />
+        </div>
+      </div>
+      <div class="rounded-xl bg-yellow-200 w-64 m-auto mt-4 mb-3"> 
+        <p class="text-lg mt-4 text-zinc-800">Our <span class="font-bold">Cheerful</span> Clients</p>
+      </div>
+
+      <h2 class="text-4xl lg:text-7xl font-bold lg:tracking-tight mt-3 md:mt-8 text-dark">
+        Check out our Work.
+      </h2>
+
+
+
+    </div>
+
+    <div id="fadeInClient" class="flex justify-between mt-5 md:mt-10 opacity-0 duration-300 gap-8 flex-col h-[670px] md:flex-row">
+      <div class="w-full md:w-1/2 h-full border-4 border-dark relative min-h-[30rem]">
+        <div class="red-circle  md:left-[581px]"></div>
+        <div class="green-circle  md:left-[581px]"></div>
+        <div id="clientContainer" class="bg-[#ffffff6b] h-16 flex-row  flex items-end border-dark border-b-4">
+          
+          {
+            clients.map((item) => (
+              <div> 
+                <div id="clientComponent" class="rounded-t-2xl text-center flex  gap-2 items-start border-2 hover:bg-yellow-100 duration-200 border-dark py-2 px-2 md:pt-4 md:p-2 md:px-6">
+                  <h4 class="md:text-md text-sm flex md:flex-row">{item.title} <span class="md:flex hidden ml-4 pb-0 md:pb-2">x</span></h3>
+                </div>
+              </div>
+            ))
+          }
+          </div>
+          <div class="w-full h-8 bg-second-color border-b-4 border-black flex items-center justify-evenly px-4">
+            <div class="w-1/3 flex justify-center">
+              <Icon class="text-prime-color w-5 h-5 mr-2" name="bx:bxs-sun" />
+              <Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-left-arrow-alt" />
+              <Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-right-arrow-alt" />
+              <Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-grid" />
+            </div>
+            <div class="w-2/3 bg-[#f9f6fb66] h-[70%] py-2 rounded-full"></div>
+          </div>
+          <div class="p-2 min-h-32 h-[84.3%] flex justify-center items-center bg-[#ffffff6b]">
+            <div id="clientInfoContainer" class="w-full h-full flex justify-center items-center" >
+                <div id="clientSegment" class="md:p-4 md:px-2 px-1">
+                  <h3 class="text-center">Interactive 3d Products</h3>
+                  <p class="text-center">In a creative leap 🏃 to enhance the customer shopping experience, our studio crafted a 3d experience for Selkirk.
+                    This innovative approach not only elevates the visual appeal of their online platform but also provides users with a 
+                    <span class="text-contrast-color font-bold">unique and engaging shopping experience</span>.
+                  </p>
+                 
+                </div>
+                <div id="clientSegment" class="p-4 md:px-2 ">
+                  <h3 class="text-center">Elevate your Experiences</h3>
+                  <p class="text-center"> Customers were not ordering subscriptions from Bones Coffee 😓 So we introduced a "Coffee Club" feature that allows
+                    customers to journey through their own process of creating their very own subscription order. Subscription orders <span style="color:#8d7dff;font-weight:700;">increased by 20%</span> the following month.
+                  </p>
+                 
+                </div>
+                <div id="clientSegment" class="p-4 md:px-2 ">
+                  <h3 class="text-center">Stay Green or Else!</h3>
+                  <p class="text-center">It's known that search engines will lower your organic rank if your website is not testing well in terms of SEO and Performance. No matter the amount of products, pages, or blog posts, count on us to keep you in the green 🔋 for
+                    <span class="text-green-600 font-bold">faster performance and better rankings</span>. <b>Nothing New</b> needed assistance in this sector and I think we did just fine!
+                  </p>
+                 
+                </div>
+
+            </div>
+        
+        </div>
+        </div>
+
+        <div id="clientShowcaseDiv" class="rounded relative w-full min-h-96 md:w-1/2 border-dark border-4 md:mt-0 mt-[-40px] shadow-yellow-300 ">
+        
+          <div id="clientComp" class="paddleBg p-0 bg-white w-full h-full overflow-hidden">
+            <div id="mp4Contain" class="relative">
+              <video class="absolute top-0 left-0 w-[91%] h-[90%] object-cover" autoplay muted playsinline loop>
+                <source src="cheervideo/Paddlespin3.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+          </div>
+          <div id="clientComp" class=" bg-black w-full h-full  max-h-[956px]">
+            <div class="relative w-full h-full m-auto">
+              <video class="w-full h-full object-contain md:object-cover" autoplay muted playsinline loop>
+                <source src="cheervideo/Bones21.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+          </div>
+          <div id="clientComp" class="bg-dark w-full h-full">
+            <Image
+              id="speedTestExample"
+              class="object-contain h-full"
+              src={speedTest}
+              alt="lighthouse speed test"
+              loading="lazy"
+              format="avif"
+            />
+          </div>
+  
+        </div>
+
+      </div>
+
+
+  </div>
+
+  </Container>
+</div>
+
+<script is:inline>
+  const clientItems = document.querySelectorAll('#clientComponent');
+  const clientComps = document.querySelectorAll('#clientComp');
+  const clientSegments = document.querySelectorAll('#clientSegment');
+
+  clientItems[0].classList.add('activeClient');
+  clientComps[0].style.display = 'block';
+  clientSegments[0].style.display = 'block';
+
+  clientItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      clientItems.forEach((otherItem) => {
+        otherItem.classList.remove('activeClient');
+      });
+
+      item.classList.add('activeClient');
+      clientComps.forEach((comp, compIndex) => {
+        comp.style.display = index === compIndex ? 'block' : 'none';
+      });
+      clientSegments.forEach((segment, segmentIndex) => {
+        segment.style.display = index === segmentIndex ? 'block' : 'none';
+      });
+    });
+  });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const targetProcess = document.getElementById("fadeInClient");
+  var tarPos =  targetProcess.getBoundingClientRect();
+  var tarY = tarPos.top;
+
+
+  window.addEventListener("scroll", function() {
+
+    if (window.scrollY >= tarY-510) {
+      targetProcess.classList.remove("opacity-0");
+    } 
+  });
+});
+
+</script>
+

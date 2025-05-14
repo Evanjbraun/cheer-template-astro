@@ -1,0 +1,156 @@
+---
+// @ts-ignore
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import Container from "@components/container.astro";
+import { Image } from 'astro:assets';
+import hand from "@assets/cheerStatic/handPoint.png";
+import arrow from "@assets/cheerStatic/downArrow.png";
+
+const questions = [
+
+  {
+    question: "Why wouldn't I just hire a developer myself?",
+    answer:
+      "You could! Not only will that take time finding a strong candidate but it will most likely cost you as well. According to Glassdoor, the average cost of a Senior Software Engineer in 2024 is around $150,000 😵. Or, you could work with our senior developers, pay half the price, and pause at any time. Your call!",
+  },
+  {
+    question: "Are refunds available for the subscription?",
+    answer:
+      "Unfortunately, we do not offer refunds due to the intricate nature of our setup and the complexity involved in this process, which ensures high-quality service but makes it challenging to facilitate refunds.",
+  },
+  {
+    question: "Is there a minimum commitment period here?",
+    answer:
+      "Cancel or pause anytime! You can pause your subscription if you have no work for us. We will be happy to resume when you are ready.",
+  },
+  {
+    question: "What type of work can you handle?",
+    answer:
+      "We specialize in Shopify and Webflow along with NextJS + AstroJS frameworks. We can also integrate a headless CMS. See our services page for more specifics.",
+  },
+  {
+    question: "Are there any limitations on the size or scope of submitted requests?",
+    answer:
+      "No limitations. However, if a request is larger than 2 business days of work, we ask that you break it down into smaller requests.",
+  },
+  {
+    question: "What is your approach to quality assurance and testing during the development process?",
+    answer:
+      "All new development changes (including mobile) are tested on a staging site. Once you approve the submitted request, we push the changes live. Integration with Git for versioning control is also offered.",
+  }
+];
+---
+
+<div class="bg-bg-color1 py-40 md:py-32 relative md:overflow-hidden">
+      <Image
+      class="hoverDown block md:hidden w-32 h-48 object-contain absolute left-1/3 top-[-6rem] "
+      src={arrow}
+      alt="arrow"
+      loading="lazy"
+      format="avif"
+    />
+  <Container>
+  <div class="flex md:flex-row flex-col ">
+    <div class="flex flex-col mt-10 gap-8 md:gap-8 md:py-4 md:mr-10 max-w-full md:max-w-96 justify-center">
+      <div></div>
+      <h2 class="text-7xl  font-bold text-contrast-color relative lg:tracking-tight md:text-start text-center">Seeking Answers?
+        <span class="text-zinc-700"><br>Get Help.</span><br>
+        <div class="text-xs tracking-normal">Not literally but figuratively.</div>
+      </h2>
+        
+      <p class="md:block hidden">If you have other questions or comments please feel free to reach out.</p>
+      <div class="py-6 md:mx-0 md:py-2 mx-auto flex gap-4 md:items-start items-center flex-col justify-center md:justify-start max-w-full md:max-w-[31rem]">
+ 
+        <div class="w-full">
+          <Link
+            href="/contact"
+            id=""
+            style="outline"
+            target="_blank"
+            class="flex gap-1 w-72 md:w-64 outlineButton text-font-white bg-contrast-color border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+            rel="noopener">
+           Reach Out
+         </Link>
+        </div>
+        <div class="w-full">
+          <Link
+            href="/services"
+            id=""
+            style="outline"
+            target="_blank"
+            class="flex outlineButton gap-1 w-72 md:w-64 text-font-white bg-zinc-600 border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+            rel="noopener">
+           More on Services
+         </Link>
+        </div>
+    </div>
+    </div>
+    <div class="flex flex-col max-w-3xl mt-16 relative">
+      {
+        questions.map((question, index) => (
+          <div class="flex w-full ">
+            <div id={`faqTitle`} data-index-number={index} class="p-12 w-full rounded-full hover:text-[#c2633e] text-contrast-color bg-[#f8ded4]">
+              <h3 class="flex justify-between text-dark font-semibold w-full h-auto text-lg ">
+                {question.question}<span><Icon class="faqIcon text-contrast-color w-6 h-6" name="bx:bx-plus" /></span>
+              </h3>
+              <p id={`faqAnswer${index}`} class="faqPanel text-slate-700 mt-2 leading-relaxed ">{question.answer}</p>
+            </div>
+          </div>
+        ))
+      }
+
+      <div id="questionHand" class="hidden lg:block absolute lg:right-[-64%] p-2 md:h-48 lg:w-[28rem]">
+        <Image
+        class="object-contain h-full"
+        src={hand}
+        alt="hand pointer"
+        loading="lazy"
+        format="avif"
+      />
+      </div>
+
+    </div>
+  </div>
+
+  </Container>
+</div>
+
+<script is:inline>
+  var faqBubble = document.querySelectorAll('#faqTitle');
+
+  faqBubble.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      const answer = document.querySelector(`#faqAnswer${index}`);
+      const icon = item.querySelector('.faqIcon');
+      if (answer == null || icon == null) return;
+      else { 
+        answer.classList.toggle("activePanel");
+        icon.classList.toggle("activeIcon");
+      }
+    });
+  });
+
+  const faqTitles = document.querySelectorAll('#faqTitle');
+  const questionHand = document.getElementById('questionHand');
+
+  faqTitles.forEach((faqTitle, index) => {
+    faqTitle.addEventListener('mouseover', () => handleFaqTitleHover(index));
+  });
+  document.addEventListener('mouseout', () => {
+    questionHand.style.marginTop = '0';
+  });
+
+  const handleFaqTitleHover = (index) => {
+    const faqPanels2 = document.querySelectorAll('.faqPanel');
+    let totalMarginTop = 0;
+
+    for (let i = 0; i < index; i++) {
+      const bubble = faqPanels2[i];
+      totalMarginTop += bubble.classList.contains('activePanel') ? 29 : 16.1;
+  }
+
+    questionHand.style.marginTop = `${totalMarginTop}%`;
+  };
+</script>
+  

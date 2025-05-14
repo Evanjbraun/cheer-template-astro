@@ -1,0 +1,389 @@
+---
+// @ts-ignore
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import { Image } from 'astro:assets';
+import main from "./ui/icons/main.png";
+import program from "./ui/icons/programming.png";
+import speed from "./ui/icons/speed.png";
+import seo from "./ui/icons/seo.png";
+import app from "./ui/icons/apps.png";
+import misc from "./ui/icons/misc.png";
+import star from "@assets/cheerStatic/star2.png";
+import load from "@assets/cheerStatic/loading.png";
+
+
+const features = [
+{
+  "title": "maintenance",
+  "subTitle": "Keep the gears movin'",
+  "offering": [
+      {
+        "group": [
+          "App Updates",
+          "Theme Updates",
+          "Product Updates"
+        ]
+      },
+      {
+        "group": [
+          "Routine Website Updates",
+          "Security Enhancements",
+          "Performance Monitoring"
+        ]
+      },
+      {
+        "group": [
+          "Backup and Recovery Systems",
+          "Scalability Planning & Design",
+          "Consultation & Support"
+        ]
+      }
+    ]
+  },
+  {
+  "title": "development",
+  "subTitle": "Senior devs at your service",
+  "offering": [
+      {
+        "group": [
+          "Page Development",
+          "Theme Changes",
+          "New Feature Implementation"
+        ]
+      },
+      {
+        "group": [
+          "Data Transformation",
+          "Figma to Code",
+          "Scripting"
+        ]
+      },
+      {
+        "group": [
+          "Discounts & Gifts",
+          "Wholesaling & Rewards",
+          "Subscriptions",
+        ]
+      }
+    ]
+  },
+  {
+  "title": " performance",
+  "subTitle": "Improve speed & performance",
+  "offering": [
+      {
+        "group": [
+          "Page Speed Optimization",
+          "Minify Assets",
+          "Compress Images/Video"
+        ]
+      },
+      {
+        "group": [
+          "Lazy Loading",
+          "Script Minify",
+          "Reduce Unused Files"
+        ]
+      },
+      {
+        "group": [
+          "CDN Implementation",
+          "Routing Refactor",
+          "Mobile Optimization"
+        ]
+      }
+    ]
+  },
+  {
+  "title": "seo",
+  "subTitle": "Improve organic on-site SEO",
+  "offering": [
+      {
+        "group": [
+          "Page Speed Optimization",
+          "On-site SEO Improvement",
+          "Best Practices Refactoring"
+        ]
+      },
+      {
+        "group": [
+          "MetaTag Optimization",
+          "Alt Tag Optimization",
+          "User Accessibility",
+        ]
+      },
+      {
+        "group": [
+          "Analytics & Reporting",
+          "Responsive Design",
+          "Web Visibility Upgrades",
+        ]
+      }
+    ]
+  },
+  {
+  "title": "apps",
+  "subTitle": "We handle custom apps and APIs",
+  "offering": [
+      {
+        "group": [
+          "App Management",
+          "Custom App Development",
+          "API + Webhooks"
+        ]
+      },
+      {
+        "group": [
+          "Subscriptions",
+          "Wholesale Portals",
+          "User Account Features"
+        ]
+      },
+      {
+        "group": [
+          "Reviews + Rewards",
+          "Email Campaigns",
+          "App Optimization",
+        ]
+      }
+    ]
+  },
+  {
+  "title": "design",
+  "subTitle": "Branding, Design, and Animation",
+  "warning": "Deluxe Plan Required",
+  "offering": [
+      {
+        "group": [
+          "Illustrations",
+          "Package Branding",
+          "Site Animation"
+        ]
+      },
+      {
+        "group": [
+          "Illustration Animation",
+          "Banner Graphics",
+          "Scroll Effects"
+        ]
+      },
+      {
+        "group": [
+          "Animated Icons",
+          "Custom Videos",
+          "Product Image Edits",
+        ]
+      }
+    ]
+  },
+];
+---
+
+<div class="py-4 md:pb-64 relative rounded-xl">
+
+  <div id="spinner" class="absolute md:top-[-14%] left-[-8%] md:left-[-15%] lg:left-[-36%]
+   w-32 h-32 top-[-8%] md:w-64 md:h-64 lg:h-96 lg:w-96">
+    <Image
+    src={load}
+    alt="loading"
+    loading="eager"
+    format="avif"
+    class="w-full h-full object-contain"
+    />
+  </div>
+
+  <div class="absolute right-1 md:right-[-10px]
+    w-28 h-28 md:h-40 md:w-40 bottom-[67%] z-0">
+    <Image
+    src={star}
+    alt="star"
+    loading="eager"
+    format="avif"
+    class="w-full h-full object-contain"
+    />
+ </div>
+
+  <Container>
+
+
+    <div class="flex flex-col gap-2 md:gap-8 p-4 md:p-8">
+      <div class="flex justify-center items-center md:gap-0 gap-5 md:flex-row flex-col py-6 max-w-full">
+        
+        <div class="flex flex-row gap-2">
+          <div id="serviceBoxTitle" class="p-2 text-center duration-200 hover:bg-contrast-color">
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={main}
+              alt="maintenance"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">Maintenance</h4>
+          </div>
+  
+          <div id="serviceBoxTitle" class="md:gap-3 p-2 text-center duration-200 hover:bg-prime-color">
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={program}
+              alt="development"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">Development</h4>
+          </div>
+  
+          <div id="serviceBoxTitle" class="md:gap-3 p-2 text-center duration-200 hover:bg-second-color">
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={speed}
+              alt="performance"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">Performance</h4>
+          </div>
+        </div>
+        
+
+        <div class="flex flex-row gap-2">
+          <div id="serviceBoxTitle" class="md:gap-3  p-2 text-center duration-200 hover:bg-contrast-color">
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={seo}
+              alt="seo"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">SEO</h4>
+          </div>
+
+          <div id="serviceBoxTitle" class="md:gap-3  p-2 text-center duration-200 hover:bg-prime-color">
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={app}
+              alt="applications"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">Apps</h4>
+          </div>
+
+          <div id="serviceBoxTitle" class="relative md:gap-3 p-2 text-center duration-200 hover:bg-second-color">
+            <span class="md:top-[-1.2rem] top-[-5px] left-0 absolute md:left-4 w-20 text-xs md:text-lg md:w-32 bg-dark rounded-full text-second-color">Deluxe Plan</span>
+            <div class="md:h-16 md:w-16 h-8 w-8">
+              <Image
+              src={misc}
+              alt="other work"
+              class="w-full h-full object-contain"
+              loading="eager"
+              format="avif"
+            />
+            </div>
+            <h4 class="text-dark pt-1 md:text-lg text-xs">Design</h4>
+          </div>
+        </div>
+
+      </div>
+      
+    {
+      features.map((item) => (
+        <div id="serviceBox" class="relative flex gap-4 w-full items-center flex-col md:flex-row justify-center">
+          <div class="w-full">
+            <h5 class="text-slate-900 m-auto text-center markerText md:text-5xl text-xl mb-5 drop-shadow-md">{item.subTitle}</h5>
+            <div class="z-10 lightBg rounded-[60px] shadow-xl text-dark p-3 md:p-10 gap-1 md:gap-4 leading-relaxed flex flex-col md:flex-row justify-center">
+              {
+                item.offering.map((group) => (
+                  <div class="flex flex-row md:flex-col w-full py-2 gap-2 justify-center items-center">
+                    {
+                      group.group.map((oItem) => (
+                        <p class="serviceOfferItem bg-red-400 text-center rounded-full p-2 px-4 w-fit md:text-lg text-[.6rem] leading-[.7rem] md:leading-4 border-dark">{oItem}</p>
+                      ))
+                    }
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    </div>
+
+    <div class="mt-10 md:mt-0 text-center flex flex-col justify-center w-full">
+      <div class="p-4">
+        <h3>Languages: </h3>
+        <p>Node, Liquid, Python, Java, JS, Ruby, Bash, and HTML/CSS of course</p>
+      </div>
+      <div class="p-4" >
+       
+        <h3>Frameworks/CMS: </h3>
+        <p>React, NextJS, AstroJS, WebFlow, Shopify</p>
+      </div>
+      
+
+    </div>
+    <div class="flex gap-10 w-full justify-center items-center md:flex-row flex-col">
+      <Link
+      href="/#planSection"
+      id=""
+      style="outline"
+      class="outlineButton flex gap-1 bg-second-color m-2 mt-10 md:mt-14 md:mb-20 rounded-full w-56 md:w-80 text-xl h-20 md:h-28 text-font-white border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+      rel="noopener">
+      See Plans
+  </Link>
+
+  <Link
+    href="/#initialHero"
+    id=""
+    style="outline"
+    class="outlineButton flex gap-1 m-2 md:mt-14 mb-20 rounded-full w-56 md:w-80 text-xl  h-20 md:h-28 text-font-white bg-zinc-900 border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+    rel="noopener">
+    Return Home
+  </Link>
+
+    </div>
+
+  </Container>
+</div>
+
+<script is:inline>
+  const boxTitles = document.querySelectorAll('#serviceBoxTitle');
+  const boxServices = document.querySelectorAll('#serviceBox');
+  const offerItems = document.querySelectorAll('.serviceOfferItem');
+  boxServices[0].classList.add('showing');
+  boxTitles[0].classList.add('showing');
+
+  boxTitles.forEach((title, index) => {
+    title.addEventListener('click', () => {
+
+      boxTitles.forEach((t) => t.classList.remove('showing'));
+      boxServices.forEach((s) => s.classList.remove('showing'));
+
+
+      title.classList.add('showing');
+      boxServices[index].classList.add('showing');
+    });
+  });
+
+  offerItems.forEach((offerItem,index) => {
+      const int = randomInt(1,7);
+      offerItem.classList.add("randomBg"+int);
+    });
+ 
+
+  function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+</script>

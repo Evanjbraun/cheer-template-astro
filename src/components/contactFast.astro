@@ -1,0 +1,113 @@
+---
+import Button from "@components/ui/button.astro";
+---
+
+<!-- To make this contact form work, create your free access key from https://web3forms.com/
+     Then you will get all form submissions in your email inbox. -->
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  id="fastForm"
+  class="needs-validation hidden justify-center items-center flex-col w-[90%] md:w-[40%] mx-auto"
+  novalidate>
+  <input type="hidden" name="access_key" value="" />
+
+  <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+  <input type="hidden" name="hidden_message" value="Waitlist Entry" />
+
+ <div class="flex justify-between gap-10 mb-12 md:flex-row flex-col w-full">
+  <div class="w-full">
+    <h3 class="text-font-white text-center">Join Now</h3>
+    <label for="email_address" class="sr-only ">Email Address</label><input
+      id="email_address"
+      type="email"
+      placeholder="Email Address"
+      name="email"
+      required
+      class="w-full bg-red-50 px-4 py-3 border-2 placeholder:text-gray-500 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-second-color"
+    />
+  <div class="empty-feedback text-red-400 text-sm mt-1 ">
+    Please provide your email address.
+  </div>
+  </div>
+
+ </div>
+
+ 
+  <Button type="submit" size="lg" class="hover:bg-second-color w-full mx-auto" block>Submit</Button>
+  <div id="result" class="mt-3 text-center"></div>
+  <button id="closeFastFormButton">X</button>
+</form>
+
+<style is:inline>
+  .invalid-feedback,
+  .empty-feedback {
+  
+    display: none;
+    text-align:center;
+  }
+
+  .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+    display: block;
+  }
+
+  .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+    display: block;
+  }
+
+  .is-invalid,
+  .was-validated :invalid {
+    border-color: #dc3545;
+  }
+</style>
+
+<script is:inline>
+  const form = document.getElementById("fastForm");
+  const result = document.getElementById("result");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelectorAll(":invalid")[0].focus();
+      return;
+    }
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    result.innerHTML = "Sending...";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.classList.add("text-green-500");
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.classList.add("text-red-500");
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        form.classList.remove("was-validated");
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+
+</script>

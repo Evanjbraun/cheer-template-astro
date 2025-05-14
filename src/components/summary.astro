@@ -1,0 +1,258 @@
+---
+// @ts-ignore
+
+import { Icon } from "astro-icon";
+import Container from "@components/container.astro";
+import LottieAnimation from "astro-integration-lottie/Lottie.astro";
+import { Image } from 'astro:assets';
+import circle from "@assets/cheerStatic/orangeCircle.png";
+import grow from "@assets/cheerStatic/patternGrow.png";
+import star1 from "@assets/cheerStatic/darkStar.png";
+import down from "@assets/cheerStatic/downArrow.png";
+import star2 from "@assets/cheerStatic/basicStar1.png";
+import star3 from "@assets/cheerStatic/basicStar2.png";
+import join from "@assets/cheerVector/subList.svg";
+import rocket from "@assets/cheerVector/missile.svg";
+import comp from "@assets/cheerVector/itComp.svg";
+
+
+---
+<div class=" h-[1400px] md:h-[50rem] my-10 md:my-40 mb-[16rem] md:mb-80 " id="textured-bg">
+
+  <Container>
+    <div class="w-full h-full p-2 relative">
+        
+      <div class="h-36 w-28 absolute right-12 lg:right-[-4rem] top-[-7rem] lg:top-[-5rem] rotate-12 md:block hidden">
+        <Image
+        src={star2}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style=""
+        />
+      </div>
+              
+      <div class="h-28 w-20 absolute right-20 lg:right-[-6rem] top-[-1rem] rotate-12 md:block hidden">
+        <Image
+        src={star3}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style="filter:hue-rotate(189deg) saturate(2.5)"
+        />
+      </div>
+      <div class="h-28 w-20 absolute right-5 top-[-2rem] md:block hidden">
+        <Image
+        src={star2}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style="filter: hue-rotate(300deg) saturate(7.5);"
+        />
+      </div>
+
+      <div class="h-48 w-36 absolute left-20 lg:left-[-11rem] bottom-[-24rem] rotate-12 md:block hidden">
+        <Image
+        src={star2}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style=""
+        />
+      </div>
+              
+      <div class="h-36 w-28 absolute left-20 lg:left-[-12rem] bottom-[-16rem] rotate-12 md:block hidden">
+        <Image
+        src={star3}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style="filter:hue-rotate(189deg) saturate(2.5)"
+        />
+      </div>
+      <div class="h-40 w-28 absolute left-1 lg:left-[-4rem] bottom-[-17rem] md:block hidden">
+        <Image
+        src={star2}
+        alt="star"
+        class="w-[80%] h-[80%] object-contain "
+        loading="lazy"
+        format="avif"
+        style="filter: hue-rotate(300deg) saturate(7.5);"
+        />
+      </div>
+
+
+
+
+
+
+        <div class="w-full px-10 py-4 h-[36rem] 
+        flex flex-col justify-around items-start">
+        <h2 class="text-[#343841] text-center md:text-start lg:text-7xl text-5xl font-bold lg:tracking-tight drop-shadow-sm" >
+          How does this Work?
+        </h2>
+        <h2 class="mx-auto md:mx-1 text-second-color text-xl lg:text-5xl">Well, it's quite simple.</h2>
+  
+       
+          <div id ="summarySection" class="flex md:flex-row flex-col pt-5 h-full">
+          <div class="insetHighlight h-[30rem] squarePatternLight summaryBox flex text-dark gap-2 md:gap-6 rounded-3xl bg-[#ff5317] flex-col w-full md:w-1/3  text-start justify-center p-6 relative">
+            <div class="w-full h-64 flex justify-center relative">
+              <Image
+              src={circle}
+              id="spinner"
+              alt="circle"
+              class="w-full h-full object-contain opacity-35"
+              loading="lazy"
+              format="avif"
+              />
+
+            <div style=" left:50%;transform: translate(-50%, -50%);"  
+            class="absolute top-[7.5rem] left-20 h-40 w-40 z-20">
+              <Image
+              src={join}
+              alt="checklist"
+              class="w-full h-full object-contain"
+              loading="lazy"
+              format="avif"
+              />
+            </div>
+    
+            </div>
+    
+    
+        <!--   <div class="flex flex-row justify-between ">
+            <h3 class="text-3xl md:text-4xl markerText text-dark">Subscribe</h3>
+          </div>-->
+          <div style="outline:black solid 2px; left:50%;transform: translate(-50%, -50%);" class="text-center absolute bottom-32 md:bottom-[8.5rem] bg-contrast-color text-dark p-2 rounded-full w-20 ">
+            <p class="text-sm font-bold text-red-50">Step 01.</p>
+          </div>
+            <p style="outline:black solid 2px; height:150px;" class="!leading-[1.6rem] font-bold lightBg rounded-xl p-3 text-dark text-xl md:text-2xl flex items-center">Subscribe and start creating requests right away.</p>
+          </div>
+    
+      
+          <div class="insetHighlight squarePatternLight summaryBox flex flex-col bg-second-color rounded-3xl text-dark w-full md:w-1/3 text-start gap-2 md:gap-6 justify-center p-6 relative">
+              <div class="w-full md:pt-8 pt-10 h-56 md:h-64 flex justify-center relative">
+                <Image
+                src={grow}
+                alt="box"
+                id="stretch"
+                class="w-[80%] h-[90%] object-contain opacity-35"
+                loading="lazy"
+                format="avif"
+                style="filter: brightness(1.3) opacity(0.6);"
+                />
+
+                <div style=" left:50%;transform: translate(-50%, -50%);"  
+                class="absolute top-32 left-20 h-40 w-40 z-20">
+                  <Image
+                  src={rocket}
+                  alt="rocket"
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                  format="avif"
+                  />
+                </div>
+      
+              </div>
+             <!--  <div class="flex flex-row justify-between">
+                <h3 class="text-3xl md:text-4xl markerText text-dark">Scale</h3>
+      
+              </div> -->
+
+              <div style="outline:black solid 2px; left:50%;transform: translate(-50%, -50%);" class="text-center absolute bottom-32 md:bottom-[8.5rem] bg-[#a79bfc] text-dark p-2 rounded-full w-20 ">
+                <p class="text-sm font-bold text-red-50">Step 02.</p>
+              </div>
+              <p style="outline:black solid 2px; height:150px;" class="!leading-[1.6rem] font-bold lightBg rounded-xl p-3 text-dark text-xl md:text-2xl flex items-center">Scale your business with senior talent and fast turnaround.</p>
+
+            </div>
+
+    
+          <div class="insetHighlight squarePatternLight summaryBox flex flex-col bg-[#ffd617] rounded-3xl text-dark w-full md:w-1/3 text-start gap-2 md:gap-6 justify-center  p-6 relative">
+            <div class="w-full h-64 flex justify-center relative">
+              <Image
+              src={star1}
+              id="pulse"
+              alt="star"
+              class="w-full h-full object-contain opacity-25 invert"
+              loading="lazy"
+              format="avif"
+              />
+              <div style=" left:47%;transform: translate(-50%, -50%);" 
+              class="absolute top-32  h-40  w-40 z-20">
+                <Image
+                src={comp}
+                alt="computer"
+                class="w-full h-full object-contain"
+                loading="lazy"
+                format="avif"
+                />
+              </div>
+    
+            </div>
+           <!--  <div class="flex flex-row justify-between relative">
+              <h3 class="text-3xl md:text-4xl markerText">Develop</h3>
+    
+            </div> -->
+            <div style="outline:black solid 2px; left:50%;transform: translate(-50%, -50%);" class="text-center absolute bottom-32 md:bottom-[8.5rem] bg-[#eaa800] text-dark p-2 rounded-full w-20 ">
+              <p class="text-sm font-bold text-red-50">Step 03.</p>
+            </div>
+            <p style="outline:black solid 2px; height:150px;" class="!leading-[1.6rem] font-bold lightBg rounded-xl p-3 text-dark text-xl md:text-2xl flex items-center">Watch requests be completed in real-time with unlimited revisions. </p>
+          </div>
+          </div>
+    
+    
+        </div>
+    </div>
+  </Container>
+
+    <Image
+      src={down}
+      id=""
+      alt="circle"
+      class="hidden md:block hoverDown md:w-48 md:h-80 w-20 h-36 object-contain absolute left-[46%] bottom-[-17rem]"
+      loading="lazy"
+      format="avif"
+    />
+
+</div>
+
+
+<script is:inline>
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+function handleScroll() {
+    const summarySection = document.getElementById('summarySection');
+    const services = document.querySelectorAll('.summaryBox');
+
+    if (isInViewport(summarySection)) {
+        services.forEach((service, index) => {
+            setTimeout(() => {
+                service.classList.add('animateSlideIn'); 
+            }, index * 500); 
+        });
+ 
+        window.removeEventListener('scroll', handleScroll); 
+    }
+}
+
+
+window.addEventListener('scroll', handleScroll);
+
+
+</script>

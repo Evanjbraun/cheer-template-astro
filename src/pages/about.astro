@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from 'astro:assets';
+import Layout from "@layouts/Layout.astro";
+import Link from "@components/ui/link.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Mission from "@components/mission.astro";
+import '../styles/custom.css';
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About">
+<div class="">
+  <div class="md:mx-auto mx-4 my-16 py-16 rounded-3xl md:rounded-full border-4 bg-orange-50 border-slate-800 max-w-screen-xl">
+
+    <Sectionhead>
+      <Fragment slot="title">the studio.</Fragment>
+      <Fragment slot="desc">devCheer was started to put ourselves a step ahead of freelancers while avoiding the agency mayhem 🏃🏽 We were originally freelancers ourselves while working full-time positions. Now we partnered together to take the next step in our careers and do what we're passionate about. 🌞</Fragment>
+    </Sectionhead>
+  </div>
+
+  <Mission />
+
+  <div class="flex overflow-x-auto">
+    <div class="flex md:justify-center mt-12 ">
+      
+      {
+        publishedTeamMembers.map((teamMemberEntry, index) => (
+          <div id={`BioGroup${index}`} class=" flex justify-center h-full min-h-[46rem] 
+          w-[24rem] lg:w-1/3 items-center flex-col border-dark border-2 p-6">
+            <div class="w-64 lg:w-96 aspect-square mx-auto mb-[-25px] object-contain">
+              <Image
+                src={teamMemberEntry.data.avatar.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                width="720"
+                sizes="(max-width: 800px) 100vw, 620px"
+                height="400"
+                loading="eager"
+                format="avif"
+                class="lg:w-full object-contain rounded transition group-hover:-translate-y-1 group-hover:shadow-xl"
+              />
+            </div>
+
+            <div id="roleCard" class="lightBg mt-4 text-center bg-orange-50 rounded-3xl border- border-dark p-6 relative">
+              <h2 id="aboutRoleName" class="absolute leading-[.8] md:leading-7">
+                {teamMemberEntry.data.role}
+              </h2>
+              <h2 class="text-2xl text-gray-800">
+                {teamMemberEntry.data.name}
+              </h2>
+              <h3 class="text-sm text-slate-500">
+                {teamMemberEntry.data.title}
+              </h3>
+              <p class="mt-5 pt-4 border-t-4 border-dark">{teamMemberEntry.data.memberBio}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+  
+  <div class="relative h-16 md:h-64 w-full flex justify-center flex-col">
+    <div id="checkerBg" class="w-full h-full">  
+    </div>
+  </div>
+
+  <div class="w-full flex gap-4 md:gap-16 justify-center my-12 md:my-32 relative z-20 px-6">
+    
+    <Link
+      href="/#missionSection"
+      id=""
+      style="outline"
+      class="outlineButton flex gap-1 rounded-full w-48 md:w-96 text-xl md:text-3xl h-16 md:h-32 text-font-white bg-zinc-900 border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+      rel="noopener">
+    Return Home
+ </Link>
+ <Link
+    href="/contact"
+    id=""
+    style="outline"
+    class="outlineButton flex bg-second-color gap-1 rounded-full w-48 md:w-96 text-xl md:text-3xl h-16 md:h-32 text-font-white border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+    rel="noopener">
+    Reach Out
+  </Link>
+  </div>
+
+  <div class="h-92 p-2 mb-[15%] md:mb-[5%]">
+    
+  </div>
+</div>
+</Layout>

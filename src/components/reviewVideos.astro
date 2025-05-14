@@ -1,0 +1,256 @@
+---
+// @ts-ignore
+
+import { Icon } from "astro-icon";
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Image } from 'astro:assets';
+import smile from "@assets/cheerStatic/smiley.png";
+import alice from "@assets/cheerStatic/alice.jpg";
+import annie from "@assets/cheerStatic/annie.jpg";
+import excl from "@assets/cheerStatic/exclamation.png";
+
+
+ 
+---
+<div class="h-max m-auto w-full max-w-screen-2xl" id="textured-bg">
+
+
+  <div class="w-full h-fit ">
+
+    <div id="standUpLead" class="mt-20 max-w-screen-xl w-full flex justify-center  mx-auto relative md:bg-orange-50 
+        md:border-4 md:border-dark">
+      <h2 class=" text-3xl md:text-7xl mx-2 mb-5 mt-2 md:mb-1 md:mx-2 text-center px-16 z-20 pt-6 p-5 text-dark tracking-tight">
+        rate our clients' <span class="text-contrast-color text-4xl md:text-7xl">stand up.</span></h2>
+
+        <div class="w-28 h-52 md:h-80 md:w-80 absolute md:right-[-4rem] md:top-[-14rem] top-[-160px] right-6 z-10 rotate-12">
+          <Image
+          src={excl}
+          alt="exclamation mark"
+          class="w-full h-full object-contain"
+          loading="lazy"
+          format="avif"
+        />
+        </div>
+    </div>
+
+          
+    <div class="p-2 h-fit md:p-10 md:h-96 w-full flex flex-col-reverse justify-center md:flex-row max-w-full md:max-w-screen-2xl m-auto mb-64 md:mb-10 overflow-hidden">
+      
+      <div id="testimonialVideoLead" class="border-2 overflow-hidden border-dark w-full md:w-96 rounded-bl-3xl md:rounded-t-3xl p-5 bg-orange-50 flex justify-start items-center flex-col">
+        <h2 class="text-4xl text-dark"><span class="text-second-color">solid material.</span><br>delivery needs a little work.</h2>
+        <div class="h-full w-full mb-[-44px] md:mb-[-23px] flex justify-center"> 
+          <video class=" w-48 h-full z-20 object-contain rounded-lg" autoplay muted playsinline loop>
+            <source src="cheervideo/applause.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+      </div>
+
+  <!-- DESKTOP START -->
+    
+  <div class="w-2/3 flex-row hidden md:flex">
+      <div id="testimonialVideoWrapActive" class="testimonialHeroBox flex hover:cursor-pointer duration-200 flex-row gap-2 items-center justify-evenly w-full primeBg border-2 border-dark p-5 rounded-t-3xl">
+      <div id="videoContainer">
+        <div class="bg-dark p-2 w-64 h-64 border-2 border-dark rounded-full px-2 relative" style="box-shadow: 0px 1px 9px 0px black;">
+            <div id="videoPosterWrap" class="absolute text-dark w-full h-full">
+              <Icon id="playIcon" style="left: 50%; transform: translateX(-50%); top:40%;" class="w-8 h-8 text-second-color opacity-80 stroke-second-color absolute z-20" name="bx:bxs-right-arrow" />
+            </div>
+            <Image
+            src={alice}
+            alt="Alice"
+            id="videoPosterAlice"
+            width="600"
+            height="600"
+            class="w-full h-full object-cover rounded-full videoPoster"
+            loading="lazy"
+            format="avif"
+          />
+          <video id="videoPlayer"class="hidden absolute inset-0 w-full h-full object-cover rounded-full" preload="none" playsinline>
+            <source src="cheervideo/AliceReview.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+          </div>
+        </div>
+        <div id="testimonialVideoDescActive" class="testimonialDescBox  p-2 w-56 h-full">
+          <span class="flex gap-1 justify-center my-2 border-b-4 border-dark pb-4">
+            <Icon id="review-star1" class="w-8 h-8 text-second-color stroke-second-color" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-second-color stroke-second-color" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-second-color stroke-second-color" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-second-color stroke-second-color" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-second-color stroke-second-color" name="bx:bxs-star" />
+          </span>
+    
+          <p class="text-lg text-center leading-6 opacity-75">"It's been a fantastic experience and we haven't looked back."</p>
+          <p class="text-sm mt-4 italic text-gray-800 opacity-75 text-center ">Alice C.<br>Operations @ Company A</p>
+          <br>
+        </div>
+      </div>
+    
+      <div id="testimonialVideoWrap" class="testimonialHeroBox contrastBg hover:cursor-pointer duration-200 flex flex-row justify-evenly gap-2 items-center w-full border-2 border-dark p-5 rounded-t-3xl">
+        <div id="videoContainer">
+          <div class="bg-dark p-2 w-64 h-64 border-2 border-dark rounded-full px-2 relative" style="box-shadow: 0px 1px 9px 0px black">
+            <div id="videoPosterWrap" class="absolute text-dark w-full h-full">
+              <Icon id="playIcon" style="left: 50%; transform: translateX(-50%); top:40%;" class="w-8 h-8 text-second-color opacity-80 stroke-second-color absolute z-20" name="bx:bxs-right-arrow" />
+            </div>
+            <Image
+            src={annie}
+            alt="annie"
+            id="videoPosterAnnie"
+            width="600"
+            height="600"
+            class="w-full h-full object-cover rounded-full videoPoster"
+            loading="lazy"
+            format="avif"
+          />
+          <video id="videoPlayer"class="hidden absolute inset-0 w-full h-full object-cover rounded-full"onended="showVideoPoster()" preload="none" playsinline>
+            <source src="cheervideo/AnnieReview.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+          </div>
+        </div>
+        <div id="testimonialVideoDesc" class="testimonialDescBox p-2 w-56 h-full">
+          <span class="flex gap-1 justify-center my-2 border-b-4 border-dark pb-4">
+            <Icon id="review-star1" class="w-8 h-8 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+            <Icon id="review-star1" class="w-8 h-8 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+          </span>
+        
+          <p class="text-lg text-center text-orange-50 leading-6 opacity-80">"The expertise was exactly what we were looking for. A+ Service!"</p>
+          <p class="text-sm mt-4 italic text-orange-50 opacity-75 text-center ">Annie W.<br>Marketing @ Company A</p>
+          <br>
+        </div>
+      </div>
+    </div>
+
+  <!-- MOBILE START 2nd video first --> 
+
+  <div class="md:hidden flex hover:cursor-pointer duration-200 flex-col md:flex-row gap-2 items-center justify-evenly w-full bg-contrast-color border-2 border-dark p-5 ">
+    
+    <div class="bg-dark w-64 h-36 border-2 border-dark " style="box-shadow: 0px 1px 9px 0px black;">
+
+      <div class=" relative w-full h-full">
+        <iframe src="https://player.vimeo.com/video/926262331?h=1e51090569&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=122963" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen 
+        style="position:absolute;top:0;left:0;width:100%;height:100%;" >
+        </iframe>
+        </div>
+      </div>
+      <div id="testimonialVideoDescActive" class="testimonialDescBox p-2 w-[85%] h-full">
+
+
+        <p class="text-lg text-center text-font-white opacity-85 leading-6">"It's been a fantastic experience and we haven't looked back."</p>
+        <span class="flex gap-1 justify-start my-2 border-t-4 border-dark pt-4">
+          <Icon id="review-star1" class="w-4 h-4 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-[#ffc65c] stroke-[#ffc65c]" name="bx:bxs-star" />
+        </span>
+        <p class="text-sm mt-1 italic text-white opacity-55 text-start ">Alice C. <br>Operations @ Company B</p>
+        <br>
+      </div>
+    </div>
+    <div class="md:hidden flex hover:cursor-pointer duration-200 flex-col md:flex-row gap-2 items-center justify-evenly w-full bg-prime-color border-2 border-dark p-5 ">
+
+      <div class="bg-dark w-64 h-36 border-2 border-dark " style="box-shadow: 0px 1px 9px 0px black;">
+
+      <div class=" relative w-full h-full">
+        <iframe src="https://player.vimeo.com/video/926263045?h=1e51090569&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=122963" 
+        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen 
+        style="position:absolute;top:0;left:0;width:100%;height:100%;" >
+        </iframe>
+        </div>
+      </div>
+      <div id="testimonialVideoDescActive" class="testimonialDescBox p-2 w-[85%] h-full">
+
+
+        <p class="text-lg text-center text-dark leading-6">"The expertise was exactly what we were looking for. A+ Service!"</p>
+        <span class="flex gap-1 justify-start my-2 border-t-4 border-dark pt-4">
+          <Icon id="review-star1" class="w-4 h-4 text-second-color stroke-second-color" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-second-color stroke-second-color" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-second-color stroke-second-color" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-second-color stroke-second-color" name="bx:bxs-star" />
+          <Icon id="review-star1" class="w-4 h-4 text-second-color stroke-second-color" name="bx:bxs-star" />
+        </span>
+        <p class="text-sm mt-1 italic text-gray-800 opacity-75 text-start ">Annie W.<br>Marketing @ Company B</p>
+        <br>
+      </div>
+
+    </div>
+
+  
+</div>
+
+
+
+    </div>
+ 
+</div>
+
+<script is:inline>
+  const testmonialBoxes = document.querySelectorAll('.testimonialHeroBox');
+
+  testmonialBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      if (box.id === 'testimonialVideoWrapActive') {
+      return; 
+  }
+
+  testmonialBoxes.forEach(otherBox => {
+    if (otherBox !== box) {
+      otherBox.id = 'testimonialVideoWrap';
+      const nonActiveChild = otherBox.querySelector('.testimonialDescBox');
+      if (nonActiveChild) {
+        nonActiveChild.id = 'testimonialVideoDesc';
+      }
+    }
+  });
+  const activeChild = box.querySelector('.testimonialDescBox');
+  if (activeChild) {
+    activeChild.id = 'testimonialVideoDescActive';
+  }
+  box.id = (box.id === 'testimonialVideoWrapActive') ? 'testimonialVideoWrap' : 'testimonialVideoWrapActive';
+});
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+const videoContainers = document.querySelectorAll('#videoContainer');
+
+videoContainers.forEach(function (container) {
+  const videoPoster = container.querySelector('.videoPoster');
+  const videoPlayer = container.querySelector('#videoPlayer');
+  const playIcon = container.querySelector('#playIcon');
+
+  
+  container.addEventListener('click', function () {
+    if (container.parentNode.id == "testimonialVideoWrapActive") {
+    playIcon.style.display = 'none';
+    if (videoPlayer.paused) {
+      videoPoster.classList.add('hidden');
+      videoPlayer.classList.remove('hidden');
+      videoPlayer.play();
+    } 
+    else {
+      videoPlayer.pause();
+    }
+  }
+  });
+
+  videoPlayer.addEventListener('ended', function () {
+    playIcon.style.display = 'block';
+    videoPlayer.classList.add('hidden');
+    videoPoster.classList.remove('hidden');
+  });
+
+
+});
+
+
+});
+
+
+</script>

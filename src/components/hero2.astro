@@ -1,0 +1,176 @@
+---
+import { Image } from 'astro:assets';
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import downArrow from "@assets/cheerStatic/downArrow.png";
+
+
+---
+
+
+<div id="heroBg" class="overflow-hidden pb-40" style="background:linear-gradient(to bottom, var(--hero) 67%, transparent);">
+  <main
+    class="flex flex-col place-items-center h-[87rem] pb-20 
+     md:pb-0 max-w-screen-xl bg-transparent m-auto rounded-3xl" id="heroMain">
+
+    <div id="initialHero"  class="bg-heroD flex justify-start rounded-t-xl flex-col 
+    items-start w-full p-1 px-16 pt-12 pb-20">
+      <h1
+        class="text-prime-color text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter ">
+        Cheers to Growth. <br><span class="text-font-white drop-shadow-lg">And Here's to Development.</span>
+      </h1>
+      <p class="text-lg mt-4 text-font-white opacity-85 max-w-xl">
+        
+       Subscribe and receive dev-on-demand services for your eCommerce business.
+       More text here.
+      </p>
+      <div class="mt-6 flex flex-col justify-start w-full md:flex-row gap-8">
+        <Link
+            href="#planSection"
+            size="lg"
+            id="outline-button-light"
+            style="outline"
+            target=""
+            class="flex gap-1 w-60 text-dark bg-contrast-color border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+            rel="noopener">
+            <Icon class="text-font-color1 w-5 h-5" name="bx:bxs-crown" />
+            See Plans
+        </Link>
+      
+        <Link
+          size="lg"
+          id="outline-button-light"
+          style="outline"
+          rel="noopener"
+          href="#"
+          class="flex gap-1 w-60 text-dark bg-second-color border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+          target="">
+          <Icon class="text-black w-4 h-4" name="bx:bxs-right-arrow" />
+          Welcome
+        </Link>
+      </div>
+      <!-- 
+      <div class="mt-8 max-w-2xl hidden md:flex gap-10 justify-between ">
+        <span class="flex items-center"><Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-zap" /> Unlimited Requests </span>
+        <span class="flex items-center"><Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-cool" /> Cancel Anytime </span>
+        <span class="flex items-center"><Icon class="text-black w-5 h-5 mr-2" name="bx:bxs-shield-alt-2" /> Reliable Support </span>
+      </div>
+      -->
+    </div>
+
+    <!-- Image hero section  -->
+    <div class="min-h-max flex w-full flex-row relative h-[40rem] bg-transparent">
+       <!-- top row  -->
+      <div class="flex flex-col min-h-max w-[55%] h-[900px]">
+        <div style="background:linear-gradient(to bottom, var(--hero) 70%, transparent);"
+         class="border-t-[28px] border-r-[28px] border-hero z-20 flex flex-col h-full left-64 w-full min-h-max rounded-md">
+          <div class="h-full w-full relative">
+          
+            <div class="w-full z-20 h-full m-auto flex justify-end">
+              <video class=" w-full h-full z-20 object-cover rounded-lg" autoplay muted playsinline loop>
+                <source src="cheervideo/Bones21.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="absolute w-full h-64 bg-zinc-900/70 top-0 z-20">
+            <h1 id="heroMainText" class="text-4xl lg:text-5xl p-4 text-center w-full z-30 py-10 text-white uppercase pr-10">Spicing Up<br> Brand Appeal</h1>
+          </div>
+
+          </div>
+         </div>
+      </div>
+
+  <!-- bottom row  
+
+
+        <div id="shake" class="bg-red-50 p-5 ml-[-50px;] rotate-3 w-1/2 h-[32rem] rounded-lg shadow-md shadow-slate-900">
+          <div class="h-full w-full relative flex flex-col">
+            <span class="text-dark uppercase bg-pink-400 px-3 z-40  w-fit relative py-1 font-bold">Creatives</span>
+            <h1 class="text-2xl lg:text-2xl w-full py-3 text-dark uppercase"><br>Shake Things Up.<br>Elevate Engagement.</h1>
+            <div class="w-4/5 z-20 h-full">
+             <video class="w-full h-full z-20 object-contain rounded-lg" autoplay muted playsinline loop>
+               <source src="cheervideo/cheerWalking.webm" type="video/webm">
+               Your browser does not support the video tag.
+           </video>
+            </div>
+          </div>
+         </div> -->
+
+         <div class="bg-heroD duration-300 pb-2 px-10 pt-32 hover:z-50 w-[50%] h-[900px] rounded-b-2xl min-h-fit">
+          <div class="h-full w-full relative flex flex-col gap-2">
+           <div class="flex-col flex gap-6 h-full justify-start">
+             <h4 class="pr-10 text-4xl w-full py-2 text-font-white uppercase">Looking for a stiff, corporate tone? <br>
+              <span class="text-second-color text-4xl pr-20">Yeah, we're not the studio for that.</span></h4>
+              <div class="my-2">
+                <h4 class="text-4xl text-font-white">8 Years</h4>
+                <span class="text-font-white opacity-80">of eCommerce experience</span>
+              </div>
+              <div class="my-2">
+                <h4 class="text-4xl text-font-white">eCommerce Experts</h4>
+                <span class="text-font-white opacity-80">We've only been doing this since the eCommerce boom.</span>
+              </div>
+              <div class="my-2">
+                <h4 class="text-4xl text-font-white">More than just Development.</h4>
+                <span class="text-font-white opacity-80">test facts go here</span>
+              </div>
+              <div>We Shine with...</div>
+              <div class="bg-font-white px-2 rounded-xl w-max z-20 h-14 pt-2 flex">
+               
+                <ul id="handleList">
+                  <li class="handleListItem ">Sports</li>
+                  <li class="handleListItem">Foods</li>
+                  <li class="handleListItem">Drinks</li>
+                  <li class="handleListItem ">Security</li>
+                  <li class="handleListItem">Scalability</li>
+                  <li class="handleListItem">You get the point.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+         </div>
+
+
+
+
+      
+     </div>
+  </main>
+  <div class="relative w-full h-40 md:h-80">
+    <div class="w-36 h-64 md:h-96 md:w-64 absolute top-0 left-1/3 md:left-[42%] z-20 rotate-[341deg] ">
+      <Image
+        src={downArrow}
+        alt="down arrow"
+        class="w-full h-full object-contain hoverDown"
+        loading="lazy"
+        format="avif"
+      />
+    </div>
+   </div>
+</div>
+
+<script type="text/javascript">
+  const allListItems = document.querySelectorAll('.handleListItem');
+  let currentIndex = 0;
+  const lengthList = allListItems.length;
+
+  function loopListItems() {
+    if (currentIndex >= 1 && allListItems[currentIndex-1].classList.contains('activeListItem')) {
+      allListItems[currentIndex-1].classList.remove('activeListItem');
+    }
+
+    if (currentIndex == lengthList) {
+      currentIndex = 0;
+    }
+
+    allListItems[currentIndex].classList.add('activeListItem');
+    currentIndex = (currentIndex + 1) ;
+   
+  }
+
+  loopListItems();
+
+  const intervalId = setInterval(loopListItems, 1500);
+</script>

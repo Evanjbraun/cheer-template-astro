@@ -1,0 +1,33 @@
+---
+
+import ClientCarousel from "@components/clientCarousel.astro";
+import ClientShowcase from "@components/clientShowcase.astro";
+import Hero3 from "@components/hero3.astro";
+import Layout from "@layouts/Layout.astro";
+import Bento from "@components/bentoBox.astro";
+import Prefooter from "@components/prefooter.astro";
+import Process from "@components/process.astro";
+import Process2 from "@components/process2.astro";
+import Save from "@components/save.astro";
+import Summary from "@components/summary.astro";
+import Reviews from "@components/reviewVideos.astro";
+import Questions from "@components/questions.astro";
+import SubscriptionCTA from "@components/subscriptionCTA.astro";
+import "../utils/all.js";
+
+---
+
+<Layout title="">
+    <Hero3 />
+    <Summary />
+    <Reviews />
+    <ClientCarousel />
+    <Process />
+    <Bento />
+    <Process2 />
+    <ClientShowcase />
+    <Save />
+    <SubscriptionCTA />
+    <Questions />
+    <Prefooter />
+</Layout>

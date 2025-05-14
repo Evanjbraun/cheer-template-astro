@@ -1,0 +1,142 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+import { Image } from 'astro:assets';
+import logo1 from "@assets/cheerVector/rowanLogo.svg";
+import logo2 from "@assets/cheerVector/cc-logo.svg";
+import logo3 from "@assets/cheerVector/bonesLogo.svg";
+import logo4 from "@assets/cheerVector/slkLogo.svg";
+import logo5 from "@assets/cheerVector/thursLogo.svg";
+import logo6 from "@assets/cheerVector/fealsLogo3.svg";
+import logo7 from "@assets/cheerVector/nedLogo.svg";
+import coffee from "@assets/cheerVector/cheerCoffee1.svg";
+import coffeeMobile from "@assets/cheerVector/cheerCoffeeSitting.svg";
+import coffeeSaying from "@assets/cheerStatic/coffeeText.png";
+
+const logos = [
+  {
+    altDesc: "rowan logo",
+    imageLink: logo1,
+    imageLinktoSite: "https://www.rowanfordogs.com/",
+  },
+  {
+    altDesc: "crafty counter logo",
+    imageLink: logo2,
+    imageLinktoSite: "http://www.craftycounter.com/",
+  },
+  {
+    altDesc: "bone coffee",
+    imageLink: logo3,
+    imageLinktoSite: "http://www.bonescoffee.com/",
+  },
+  {
+    altDesc: "selkirk logo",
+    imageLink: logo4,
+    imageLinktoSite: "http://www.selkirk.com/",
+  },
+  {
+    altDesc: "thursday boot logo",
+    imageLink: logo5,
+    imageLinktoSite: "http://www.thursdayboots.com/",
+  },
+  {
+    altDesc: "feals logo",
+    imageLink: logo6,
+    imageLinktoSite: "http://www.feals.com/",
+  },
+  {
+    altDesc: "ned logo",
+    imageLink: logo7,
+    imageLinktoSite: "https://www.helloned.com//",
+  },
+
+];
+
+---
+
+
+<div class="py-12 flex justify-center relative mt-96">
+  <div class="w-52 h-52 md:h-80 md:w-80 absolute top-[-16.7rem] md:rotate-12 md:top-[-18rem] md:right-80 right-5 z-20 ">
+    <Image
+    src={coffeeSaying}
+    alt="just don't schedule meetings before 9."
+    class="w-full h-full object-contain"
+    loading="lazy"
+    format="avif"
+  />
+  </div>
+  <h3 class="bg-[#ffefe8] insetHighlight absolute text-4xl top-4 md:top-12 z-20 pt-6 p-5 text-dark tracking-tight rounded-full border-4 border-dark text-center">You're in good company.</h3>
+  <div class="hidden md:block absolute z-20 md:z-10 w-64 right-1 md:right-[30rem]
+  top-[-50px] md:top-[-3.1rem] duration-200 rotate-[350deg] md:rotate-0">
+    <Image
+      src={coffee}
+      alt="cheer coffee"
+      width="200"
+      class="md:block hidden"
+      sizes="(max-width: 400px) 100vw, 320px"
+      height="100"
+      loading="lazy"
+      format="avif"
+    />
+
+  </div>
+  
+  <div class="md:hidden block absolute z-20 w-full left-[120px] right-1 
+  top-[-7.6rem] duration-200 max-w-fit rotate-[7deg]">
+  <Image
+  src={coffeeMobile}
+  alt="cheer coffee sitting"
+  width="200"
+  class="w-44"
+  sizes="(max-width: 400px) 100vw, 320px"
+  height="100"
+  loading="lazy"
+  format="avif"
+/>
+  </div>
+</div>
+
+<div id="fullWidthCarousel" class="sliderZ mt-16 h-56 bg-dark w-full relative flex gap-5" role="region" aria-label="Logo Carousel">
+    <div id="carouselContainer" class="slide-trackZ w-full justify-around mr-0 items-center flex" role="list">
+        {
+          logos.map((item) => (
+              <div class="slideZ h-auto max-w-none inline-block object-contain hover:opacity-70 duration-200" role="listitem">
+                  <a href={item.imageLinktoSite} target="_blank">
+                    <Image class="object-contain max-w-44 max-h-24 "
+                      src={item.imageLink}
+                      alt={item.altDesc}
+                      width="400"
+                      sizes="(max-width: 400px) 100vw, 320px"
+                      height="100"
+                      loading="lazy"
+                      format="avif"
+                    />
+                </a>
+              </div>
+        
+          ))
+        }
+    </div>
+    <div id="carouselContainer" class="slide-trackZ w-full justify-around mr-0 items-center flex" role="list">
+      {
+        logos.map((item) => (
+            <div class="slideZ h-auto max-w-none inline-block object-contain hover:opacity-70 duration-200" role="listitem">
+                <a href={item.imageLinktoSite} target="_blank">
+                  <Image class="object-contain max-w-44 max-h-24 "
+                    src={item.imageLink}
+                    alt={item.altDesc}
+                    width="400"
+                    sizes="(max-width: 400px) 100vw, 320px"
+                    height="100"
+                    loading="lazy"
+                    format="avif"
+                  />
+              </a>
+            </div>
+      
+        ))
+      }
+  </div>
+</div>
+
+

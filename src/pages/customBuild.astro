@@ -1,0 +1,75 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Contactform from "@components/contactform.astro";
+import { Image } from 'astro:assets';
+import hand from "@assets/cheerStatic/handPoint.png";
+---
+
+<Layout title="Contact">
+  <Container>
+
+    <div class="md:mx-auto mx-4 mt-20 py-12 rounded-3xl md:rounded-full border-4 bg-orange-50 border-slate-800 max-w-screen-xl">
+      <Sectionhead>
+        <Fragment slot="title">let's get custom.</Fragment>
+        <Fragment slot="desc">For custom web builds we usually ask to kick things off with a discovery meeting. Please schedule a meeting below or send us a message with details and availability and we can schedule accordingly. 😎  </Fragment>
+      </Sectionhead>
+    </div>
+
+    <div class="flex flex-col gap-10 mx-auto mb-4 max-w-4xl mt-16 rounded-md">
+      <div class="flex justify-center flex-col items-center">
+        <div class="bg-dark w-80 p-5 text-md border-2 border-black text-font-white
+        rounded-full my-2 text-center margin-x-auto" id="slots-available-bar"> 
+          Current Reply Time: <span class="rounded-xl text-prime-color text-xl font-bold"id="contactTime">42 mins</span>
+        </div>
+        <div class="mt-5">
+          <a href="https://calendly.com/test-cheer" target="_blank">
+            <div class="w-80 p-5 text-md hover:bg-contrast-color duration-200 border-2 border-black text-dark
+            rounded-full my-2 text-center margin-x-auto flex-row justify-center flex gap-3 items-center">
+             <Icon class="text-dark w-5 h-5" name="uil:calender" />
+              <p class="">Schedule Meeting</p>
+            </div> 
+          </a>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+  </Container>
+  <div class="h-80 w-full relative overflow-hidden">
+    <div class="absolute  left-[10%] md:left-[40%] top-[5%] rotate-90 p-3 h-full w-[20rem]">
+        <Image
+        class="object-contain h-full"
+        src={hand}
+        alt="hand pointer"
+        loading="lazy"
+        id="contactHand"
+        format="avif"
+      />
+    </div>
+  </div>
+
+</Layout>
+
+
+
+<script is:inline>
+
+  function updateReplyTime() {
+  const randomNumber = Math.floor(Math.random() * (21 - 17)) + 37;
+  const textTimerElement = document.getElementById("contactTime");
+  const originalColor = textTimerElement.style.backgroundColor || "transparent";
+  function colorChange() {
+    textTimerElement.style.backgroundColor = "#ffe757"; 
+    setTimeout(() => {
+      textTimerElement.style.backgroundColor = originalColor;
+    }, 1000); }
+  textTimerElement.textContent = (randomNumber + " mins");
+  colorChange();
+}
+
+setInterval(updateReplyTime, Math.random() * (12000 - 5000) + 7000);
+</script>

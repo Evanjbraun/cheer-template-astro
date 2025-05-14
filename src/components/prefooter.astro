@@ -1,0 +1,197 @@
+---
+import Link from "@components/ui/button.astro";
+import Container from "@components/container.astro";
+import { Icon } from "astro-icon";
+import { Image } from 'astro:assets';
+import footerMascot from "@assets/cheerStatic/devCheerHD.png";
+import scroll from "@assets/cheerStatic/scroll.png";
+import annie from "@assets/cheerStatic/annieStatic.jpg";
+import alice from "@assets/cheerStatic/alice.jpg";
+import cameron from "@assets/cheerStatic/cameron.jpg";
+import cloud2 from "@assets/cheerStatic/heroCloud2.png";
+import cloud3 from "@assets/cheerStatic/heroCloud3.png";
+import cloud4 from "@assets/cheerStatic/heroCloud4.png";
+import cloud5 from "@assets/cheerStatic/heroCloud5.png";
+import stars from "@assets/cheerStatic/smallStars.png";
+
+
+---
+
+<div id="prefooter-container" 
+class="bg-purple-500 py-80 md:pt-96 md:pb-72 relative overflow-hidden"
+style="min-height:500px;">
+
+  <div id="footerMascot" class="absolute w-40 h-40 top-40 md:w-72 md:h-72 z-40">
+    <Image
+      id="dev cheer mascot"
+      class="object-contain h-full"
+      src={footerMascot}
+      alt="dev cheer mascot"
+      loading="lazy"
+      format="avif"
+  />
+  </div>
+
+  <div class="heroCloud3 absolute block top-1 md:top-20 w-40 h-32 right-1 md:right-64 md:h-36 md:w-64 z-20 ">
+    <Image
+      src={cloud2}
+      alt="cloud"
+      class="w-full h-full object-contain"
+      loading="lazy"
+      format="avif"
+    />
+  </div>
+
+  <div class="heroCloud4 absolute bottom-16 md:bottom-20 right-1 md:h-72 md:w-[38rem] h-64 w-[26.5rem] z-10">
+    <Image
+      src={cloud3}
+      alt="cloud"
+      class="w-full h-full object-contain"
+      loading="lazy"
+      format="avif"
+    />
+  </div>
+
+  <div class="heroCloud3 absolute top-72 left-[-45px]  
+  w-64 h-32 md:h-[23rem] md:w-[48rem] z-20 md:block hidden">
+    <Image
+      src={cloud4}
+      alt="cloud"
+      class="w-full h-full object-contain"
+      loading="lazy"
+      format="avif"
+    />
+  </div>
+
+  <div class="heroCloud4 absolute top-20 md:top-10 left-[-4rem] md:left-64 w-48 h-28 md:h-48 md:w-80 z-20 ">
+    <Image
+      src={cloud5}
+      alt="cloud"
+      class="w-full h-full object-contain"
+      loading="lazy"
+      format="avif"
+    />
+  </div>
+
+
+  <div class="hidden md:block h-auto w-full" id="prefooter-video-bg">
+   <video autoplay muted loop id="myVideo" preload="none"  class="w-screen" >
+      <source src="cheervideo/cheerTrailer.webm" type="video/webm">
+    </video>
+
+  </div>
+    <div class="absolute top-0 left-0 right-0 rounded-full aspect-square" style="" id="prefooter-circle">
+          <div class="flex flex-col items-center gap-4 min-h-[750px] pt-8 md:pt-16 md:pb-8">
+            <br>
+            <h2 class="text-font-color3 font-bold text-4xl md:text-6xl tracking-tight text-center z-20">
+              Half the Cost.<br>Twice the Experience.
+            </h2>
+
+          </div>
+      </div>
+</div>
+
+
+<div id="prefooter-sqaure" class ="pt-0 md:pt-1 mt-[-1px] relative bg-second-color">
+
+  <div id="testimonialReviewBox"  class="w-80 px-4 md:px-16 md:w-[47%] mx-auto mb-20 text-center p-12 rounded-2xl flex justify-center flex-col border-white border-4 relative z-20">
+    <h3 style="font-family: 'lobster', sans-serif; text-shadow: 1px 1px 3px #391f5d;" class="text-4xl md:text-6xl italic text-center !text-[#eadcff] contrastGlow">Where We Shine <br></h3>
+    <p class="text-lg text-center mt-4 leading-tight opacity-70">Over almost a decade, we've done a bit of everything—freelancing, big corporate jobs, and 1099s with local businesses. From working with enterprise software to helping startups get off the ground, we've seen a lot. But now, with devCheer, we're focusing on what really gets us excited: elevating brands and providing development expertise for eCommerce Businesses. 
+    </p>
+
+    <div class="absolute top-1 md:top-4 right-5 md:right-10 w-12 h-12 md:h-24 md:w-24 z-20 rotate-12">
+      <Image
+        src={stars}
+        alt="cloud"
+        class="w-full h-full object-contain drop-shadow-md"
+        loading="lazy"
+        format="avif"
+      />
+    </div>
+  
+  </div>
+
+  <div class="flex gap-10 items-center flex-row justify-start
+  md:justify-around mt-36 md:mt-32 pb-32 px-4 max-w-[1350px] md:max-w-full overflow-x-scroll">
+  
+  <span class="md:hidden block absolute top-[29rem] md:top-96 left-20 w-64 h-20 drop-shadow-md">
+      <Image
+        src={scroll}
+        alt="scroll"
+        loading="lazy"
+        format="avif"
+        class="w-full h-full"
+      />
+  </span>
+
+    <div id="boxTestimonial" class="w-[450px] shrink-0 md:w-96 bg-slate-300 p-8 border-black border-2 rounded-l-xl rounded-t-xl">
+      
+      <div class="h-32 w-32 my-5 mx-auto">
+        <Image
+        src={cameron}
+        alt="annie"
+        loading="lazy"
+        format="avif"
+        class="w-full h-full object-cover rounded-[99px] border-black border-2 shadow-xl"
+      />
+      </div>
+      
+    
+      <p class="text-sm ">Not only do they get the job done, but they will also go beyond what is asked. devCheer has been a blessing and we are so glad to partner with them.</p>
+      <span class="flex gap-1 my-2">
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+      </span>
+      <span class="testimonialInfo">Cameron S. <br>Marketing @ Company</span>
+    </div>
+    <div id="boxTestimonial" class="w-[450px] shrink-0 md:w-96 bg-slate-300 p-8 border-black border-2 rounded-l-xl rounded-t-xl overflow-hidden relative">
+      
+      <div class="h-32 w-32 my-5 mx-auto">
+        <Image
+        src={alice}
+        alt="alice"
+        loading="lazy"
+        format="avif"
+        class="w-full h-full object-cover rounded-[99px] border-black border-2 shadow-xl"
+      />
+      </div>
+      
+
+      <p class="text-sm ">We're glad we took the leap and tried devCheer as it's been a fantastic experience and we're not looking back.</p>
+      <span class="flex gap-1 my-2">
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+      </span>  
+      <span class="testimonialInfo">Alice C. <br>Operations @ Company</span>
+      </div>
+    <div id= "boxTestimonial" class="w-[450px] shrink-0 md:w-96 bg-slate-300 p-8 border-black border-2 rounded-l-xl rounded-t-xl overflow-hidden relative">
+
+      <div class="h-32 w-32 my-5 mx-auto">
+        <Image
+        src={annie}
+        alt="annie"
+        loading="lazy"
+        format="avif"
+        class="w-full h-full object-cover rounded-[99px] border-black border-2 shadow-xl"
+      />
+      </div>
+      
+
+      <p class="text-sm ">Having Senior expertise on our team now has really helped with scaling our business and giving our customers new features. A+ Service!</p>
+      <span class="flex gap-1 justify-start my-2">
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+        <Icon id="review-star1" class="w-4 h-4 stroke-black text-prime-color" name="bx:bxs-star" />
+      </span>  
+      <span class="testimonialInfo">Annie W. <br>Marketing @ Company</span>
+      </div>
+  </div>
+</div>

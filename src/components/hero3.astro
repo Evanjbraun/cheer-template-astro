@@ -1,0 +1,149 @@
+---
+import { Image } from 'astro:assets';
+import Container from "@components/container.astro";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import downArrow from "@assets/cheerStatic/downArrow.png";
+import cloud1 from "@assets/cheerStatic/heroCloud1.png";
+import cloud2 from "@assets/cheerStatic/heroCloud2.png";
+import cloud3 from "@assets/cheerStatic/heroCloud3.png";
+import cloud4 from "@assets/cheerStatic/heroCloud4.png";
+import cloud5 from "@assets/cheerStatic/heroCloud5.png";
+import cloud6 from "@assets/cheerStatic/heroCloud6.png";
+
+
+---
+
+
+<div id="heroBg" class="overflow-y-visible pb-40 relative md:pt-16 mt-[-1px]" style="background:linear-gradient(to bottom, var(--secondary-color) 57%, transparent);">
+
+  <div class="w-full h-full overflow-x-hidden absolute z-20">
+    <div class="heroCloud md:block hidden absolute top-96 w-32 h-16 md:h-40 md:w-96 z-20">
+      <Image
+        src={cloud1}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+  
+    <div class="heroCloud1 absolute md:block hidden top-0 left-96 h-28 w-40 z-20 ">
+      <Image
+        src={cloud2}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+  
+    <div class="heroCloud2 absolute top-[24rem] left-1/2 h-[23rem] w-[48rem] z-20 ">
+      <Image
+        src={cloud3}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+
+    <div class="heroCloud3 absolute top-[28rem] left-[-45px] md:left-32 w-64 h-32 md:h-[23rem] md:w-[48rem] z-20 ">
+      <Image
+        src={cloud4}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+
+    <div class="heroCloud4 absolute top-4 md:top-40 left-[-4rem] md:left-5 w-48 h-28 md:h-48 md:w-80 z-20 ">
+      <Image
+        src={cloud5}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+
+    <div class="heroCloud5 absolute top-[-30px] md:top-20 right-[-20px] md:right-5 h-28 w-36 md:h-48 md:w-80 z-50">
+      <Image
+        src={cloud6}
+        alt="cloud"
+        class="w-full h-full object-contain"
+        loading="eager"
+        format="avif"
+      />
+    </div>
+  </div>
+
+
+  <div class="md:block hidden heroRocket absolute top-[25rem] left-2 md:left-[68%] h-56 w-56 z-10"> 
+    <video class=" w-full h-full z-10 object-contain rounded-lg" autoplay muted playsinline loop>
+      <source src="cheervideo/heroRocket.webm" type="video/webm">
+      Your browser does not support the video tag.
+  </video>
+  </div>
+
+  <main id="heroMain" class="flex flex-col place-items-center h-[44rem] pb-20 overflow-hidden 
+              md:pb-0 max-w-screen-xl bg-transparent m-auto rounded-3xl relative">
+
+
+    <div id="initialHero"  class="flex justify-center rounded-t-xl flex-col 
+    items-center w-full p-1 px-10 md:px-16 pt-2 md:pt-12 pb-20 z-30">
+      <h1 style="text-shadow: 1px 1px 2px #404040;"
+        class="text-prime-color text-center text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter ">
+        Cheers to Growth. <br><span class="text-font-white drop-shadow-lg">Here's to Development.</span>
+      </h1>
+      <p class="text -lg mt-4 text-font-white text-center opacity-85 max-w-xl">
+        
+        offering "nontraditional" branding and development services as a subscription to elevate your eCommerce business.
+      </p>
+      <div class="mt-6 flex flex-col justify-center items-center w-full md:flex-row gap-8">
+        <Link
+            href="#planSection"
+            size="lg"
+            id=""
+            style="outline"
+            target=""
+            class="outlineButtonLight flex gap-1 w-60 text-dark bg-contrast-color border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+            rel="noopener">
+            <Icon class="text-font-color1 w-5 h-5" name="bx:bxs-crown" />
+            See Plans
+        </Link>
+      
+        <Link
+          size="lg"
+          id="scrollHeroButton"
+          style="outline"
+          rel="noopener"
+          href="/availability"
+          class="outlineButtonLight flex gap-1 w-60 text-dark bg-prime-color border-dark hover:bg-font-white hover:text-dark items-center justify-center"
+          target="">
+          <Icon class="text-black w-5 h-5" name="bx:bxs-zap" />
+          Check Availability
+        </Link>
+      </div>
+
+    </div>
+
+      
+     </div>
+  </main>
+
+</div>
+
+<script type="text/javascript">
+
+document.getElementById('scrollHeroButton').addEventListener('click', function() {
+  const nextSection = document.getElementById('teamButton');
+  const offset = nextSection.offsetTop+400; 
+  window.scrollTo({
+    top: offset,
+    behavior: 'smooth' 
+  });
+});
+
+</script>

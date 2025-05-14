@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Image } from 'astro:assets';
+import lost from "@assets/cheerStatic/lostCoffee.png";
+
+---
+
+<Layout title="404 Not Found">
+  <Container>
+    <div class="min-h-[calc(100vh-16rem)] flex flex-col items-center justify-center">
+      <p class="text-center text-red-900">You might be lost.</p>
+      <div class="h-64 w-64">
+        <Image
+        class="object-contain h-full"
+        src={lost}
+        alt="hand pointer"
+        loading="eager"
+        format="avif"
+      />
+     
+      </div>
+      <div class="mt-2 text-center">
+        <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">404</h1>
+        <p class="text-lg mt-4 text-slate-600">Page not found.</p>
+      </div>
+    </div>
+  </Container>
+</Layout>

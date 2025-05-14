@@ -1,0 +1,101 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Navbar from "@components/navbar/navbar.astro";
+import "@fontsource/inter/variable.css";
+import { ViewTransitions } from "astro:transitions";
+import '../styles/custom.css'
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const resolvedImageWithDomain = new URL(
+  "/opengraph.jpg",
+  Astro.site
+).toString();
+
+const { title, description = "Cheer Template" } = Astro.props;
+
+const makeTitle = title
+  ? title + " | " + "devCheer"
+  : "devCheer - eCommerce Web Development as a Subscription";
+---
+<!--
+_____________ ¶¶¶¶¶¶¶¶ 
+_________¶¶¶¶¶ _______¶¶¶¶¶ 
+_______¶¶¶ ________________¶¶¶ 
+_____¶¶¶ ____________________¶¶¶ 
+____¶¶ ________________________¶¶ 
+___¶ ______¶¶¶_____¶¶¶__________¶¶ 
+__¶ _________¶¶______¶¶__________¶¶ 
+_¶¶ __________¶¶______¶¶_________¶¶ 
+_¶ ____________¶¶______¶¶___¶¶¶___¶¶ 
+¶¶ _____¶¶_____¶¶______¶¶_____¶¶__¶¶ 
+¶¶ ___¶¶¶______¶¶______¶¶______¶¶_¶¶ 
+¶¶ __¶¶¶¶¶__________________¶¶_¶¶_¶¶ 
+_¶ __¶¶__¶¶_________________¶¶____¶¶ 
+_¶¶ ______¶¶______________¶¶¶____¶¶ 
+__¶¶ ______¶¶____________¶¶¶_____¶¶ 
+___¶¶ _______¶¶¶¶_____¶¶¶¶______¶¶ 
+____¶¶ _________¶¶¶¶¶¶¶________¶¶ 
+______¶¶ ____________________¶¶ 
+________¶¶¶ ______________¶¶¶ 
+__________ ¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶
+---------- DEVCHEER @ 2024 ----------
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preload" href="/_astro/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <style is:global>
+      :root {
+        --font-inter: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      * {
+        font-family: var(--font-inter);
+      }
+    </style>
+    <SEO
+      title={makeTitle}
+      description="devCheer | Your Personal eCommerce Web Studio."
+      canonical={canonicalURL}
+      twitter={{
+        creator: "@chaseb-test",
+        site: "@devCheer",
+        card: "summary_large_image",
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: "website",
+          title: `devCheer - a small eCommerce Development Studio`,
+          image: resolvedImageWithDomain,
+        },
+        image: {
+          alt: "devCheer Homepage Screenshot",
+        },
+      }}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+    <style is:global>
+      img {
+        content-visibility: auto;
+      }
+    </style>
+  </body>
+</html>
